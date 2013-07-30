@@ -121,7 +121,7 @@ This cookbook uses Test Kitchen (1.0). To run the tests, clone the repository, i
     $ git clone git://github.com/opscode-cookbooks/wordpress.git
     $ cd wordpress
     $ bundle install
-    $ kitchen test
+    $ bundle exec strainer test
 
 1. Fork the cookbook on GitHub
 2. Make changes
