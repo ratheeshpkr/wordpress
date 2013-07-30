@@ -4,7 +4,7 @@ gem 'chef', '~> 11.6'
 gem 'berkshelf', '~> 2.0'
 
 group :test do
-  gem 'foodcritic', path: '~/Development/foodcritic'# '~> 2.2'
+  gem 'foodcritic', '~> 2.2'
   gem 'strainer',   '~> 3.1'
 end
 
