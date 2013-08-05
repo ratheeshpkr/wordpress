@@ -113,7 +113,7 @@ end
 
 log "wordpress_install_message" do
   action :nothing
-  message "Navigate to 'http://#{server_fqdn}/wp-admin/install.php' to complete wordpress installation"
+  # message "Navigate to 'http://#{server_fqdn}/wp-admin/install.php' to complete wordpress installation"
 end
 
 template "#{node['wordpress']['dir']}/wp-config.php" do
