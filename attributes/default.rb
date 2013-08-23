@@ -23,6 +23,12 @@ default['wordpress']['version'] = "latest"
 default['wordpress']['checksum'] = ""
 default['wordpress']['repourl'] = "http://wordpress.org/"
 default['wordpress']['dir'] = "/var/www/wordpress"
+default['wordpress']['db']['host'] = "localhost"
 default['wordpress']['db']['database'] = "wordpressdb"
 default['wordpress']['db']['user'] = "wordpressuser"
 default['wordpress']['server_aliases'] = [node['fqdn']]
+
+# MySQL default settings
+default['mysql']['server_root_password'] = "rootpass"
+default['mysql']['server_debian_password'] = "debpass"
+default['mysql']['server_repl_password'] = "replpass"

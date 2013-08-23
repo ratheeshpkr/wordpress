@@ -95,7 +95,8 @@ execute "create #{node['wordpress']['db']['database']} database" do
     require 'rubygems'
     Gem.clear_paths
     require 'mysql'
-    m = Mysql.new("localhost", "root", node['mysql']['server_root_password'])
+    p node['wordpress']['db']['host']
+    m = Mysql.new(node['wordpress']['db']['host'], "root", node['mysql']['server_root_password'])
     m.list_dbs.include?(node['wordpress']['db']['database'])
   end
   notifies :create, "ruby_block[save node data]", :immediately unless Chef::Config[:solo]
@@ -123,6 +124,7 @@ template "#{node['wordpress']['dir']}/wp-config.php" do
   mode "0644"
   variables(
     :database        => node['wordpress']['db']['database'],
+    :database_host   => node['wordpress']['db']['host'],
     :user            => node['wordpress']['db']['user'],
     :password        => node['wordpress']['db']['password'],
     :auth_key        => node['wordpress']['keys']['auth'],
