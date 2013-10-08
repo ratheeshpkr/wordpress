@@ -26,6 +26,7 @@ default['wordpress']['dir'] = "/var/www/wordpress"
 default['wordpress']['db']['host'] = "localhost"
 default['wordpress']['db']['database'] = "wordpressdb"
 default['wordpress']['db']['user'] = "wordpressuser"
+default['wordpress']['db']['create'] = false
 default['wordpress']['server_aliases'] = [node['fqdn']]
 
 # MySQL default settings
